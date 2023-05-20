@@ -17,5 +17,7 @@ Tecnologias Utilizadas
 As seguintes tecnologias foram utilizadas no desenvolvimento da aplicação:
 
 Linguagem de Programação: Python
+
 Framework/Biblioteca: Flask
+
 Banco de Dados: MySQL
