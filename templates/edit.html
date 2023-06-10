@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Editar Item</h1>
+    <form action="/edit/{{ item['id'] }}" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ item['nome'] }}">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" value="{{ item['descricao'] }}">
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" name="valor" value="{{ item['valor'] }}">
+        <input type="submit" value="Salvar">
+    </form>
+    <a href="/">Voltar para a lista</a>
+</body>
+
+</html>
