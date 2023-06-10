@@ -11,6 +11,7 @@ def get_db_connection():
         database="crud",
         cursorclass=pymysql.cursors.DictCursor
     )
+    
     return db
 
 def create_table():
@@ -53,16 +54,16 @@ def add_item():
         nome = request.form['nome']
         descricao = request.form['descricao']
         valor = request.form['valor']
-        
+
         query = "INSERT INTO itens (nome, descricao, valor) VALUES (%s, %s, %s)"
         cursor.execute(query, (nome, descricao, valor))
         db.commit()
-        
+
         cursor.close()
         db.close()
-        
+
         return redirect('/')
-    
+
     return render_template('add.html')
 
 @app.route('/edit/<int:item_id>', methods=['GET', 'POST'])
@@ -74,16 +75,16 @@ def edit_item(item_id):
         nome = request.form['nome']
         descricao = request.form['descricao']
         valor = request.form['valor']
-        
+
         query = "UPDATE itens SET nome=%s, descricao=%s, valor=%s WHERE id=%s"
         cursor.execute(query, (nome, descricao, valor, item_id))
         db.commit()
-        
+
         cursor.close()
         db.close()
-        
+
         return redirect('/')
-    
+
     db = get_db_connection()
     cursor = db.cursor()
 
@@ -104,10 +105,10 @@ def delete_item(item_id):
     query = "DELETE FROM itens WHERE id = %s"
     cursor.execute(query, (item_id,))
     db.commit()
-    
+
     cursor.close()
     db.close()
-    
+
     return redirect('/')
 
 if __name__ == '__main__':
