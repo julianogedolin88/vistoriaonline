@@ -10,14 +10,13 @@ Create: Permite criar novos registros na base de dados.
 Read: Permite visualizar os registros existentes na base de dados.
 Update: Permite atualizar informações de registros existentes na base de dados.
 Delete: Permite excluir registros da base de dados.
+
 Tecnologias Utilizadas
 As seguintes tecnologias foram utilizadas no desenvolvimento da aplicação:
 
 Linguagem de Programação: Python
 Framework/Biblioteca: Flask
 Banco de Dados: MySQL
-Ambiente de Desenvolvimento
-Para configurar o ambiente de desenvolvimento e executar a aplicação, siga as instruções abaixo.
 
 Pré-requisitos
 Python 3.7 ou superior instalado.
